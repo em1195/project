@@ -12,12 +12,6 @@ from statistics import mean
 from tensorflow.keras.utils import plot_model
 import matplotlib.pyplot as plt
 
-def gate(X1, X2):
-  gate1 = Dense(32,activation='linear',use_bias = True)(X1)
-  gate2 = Dense(32, activation='linear')(X2)
-  gate3 = Add()([gate1,gate2])
-  coeff = Lambda(lambda x: K.sigmoid(x))(gate3)
-  return(coeff)
 
 tf.keras.backend.clear_session()
 cwd = os.getcwd()
